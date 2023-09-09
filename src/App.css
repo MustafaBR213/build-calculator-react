@@ -1,38 +1,76 @@
+/* App.css */
+
 .App {
+  display: flex;
+  justify-content: center;
+  background-color: #2c3e50; /* Background color for the entire app */
+  height: 100vh; /* Adjust the height as needed */
+}
+
+.calculator {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  background-color: #34495e; /* Background color for the calculator */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.calculator > * {
+  border: none;
+  background-color: #2c3e50; /* Background color for buttons */
+  color: #ecf0f1; /* Text color for buttons */
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  padding: 20px;
+  border-radius: 5px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.calculator > *:hover {
+  background-color: #1a252f; /* Darker background color on hover */
+  color: #ffffff; /* White text on hover */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.row {
+  grid-column: 1 / -1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#display {
+  text-align: right;
+  padding: 10px;
+  font-size: 36px;
+  background-color: #34495e; /* Background color for the display */
+  color: #ecf0f1; /* Text color for the display */
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
-.App-link {
-  color: #61dafb;
+#clear {
+  text-align: center;
+  background-color: #e74c3c; /* Red color for the clear button */
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Dark mode styles */
+.dark-mode {
+  background-color: #34495e; /* Dark background for the entire app in dark mode */
+}
+
+.dark-mode .calculator {
+  background-color: #2c3e50; /* Dark background color for calculator in dark mode */
+}
+
+.dark-mode .calculator > * {
+  background-color: #34495e; /* Dark background color for buttons in dark mode */
+  color: #ecf0f1; /* Text color for buttons in dark mode */
+}
+
+.dark-mode #display {
+  background-color: #2c3e50; /* Dark background color for display in dark mode */
+  color: #ecf0f1; /* Text color for display in dark mode */
 }
